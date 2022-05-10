@@ -8,6 +8,10 @@ func main(){
 	// 要创建一个空 map，需要使用内建的 make:make(map[key-type]val-type)
 	m := make(map[string]int)
 
+	// 注意以下初始化情况
+	// var m map[int]int   		// 此时map是一个未被初始化的nil map，向其中插入元素会报错
+    // m = make(map[int]int)   	// 初始化后能够正常插入元素
+
 	// 使用典型的 make[key] = val 语法来设置键值对
 	m["k1"] = 7
 	m["k2"] = 13
