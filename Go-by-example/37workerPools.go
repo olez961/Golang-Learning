@@ -8,9 +8,9 @@ import (
 // 工作池
 func workers(id int, jobs <-chan int, results chan<- int) {
 	for j := range jobs {
-		fmt.Println("worker", id, "started job", j)
+		fmt.Println("workerInWGExample", id, "started job", j)
 		time.Sleep(time.Second)
-		fmt.Println("worker", id, "finished job", j)
+		fmt.Println("workerInWGExample", id, "finished job", j)
 		results <- j * 2
 	}
 }
@@ -44,15 +44,15 @@ func main() {
 
 // 输出
 /*
-worker 1 started job 1
-worker 2 started job 2
-worker 3 started job 3
-worker 3 finished job 3
-worker 3 started job 4
-worker 2 finished job 2
-worker 2 started job 5
-worker 1 finished job 1
-worker 3 finished job 4
-worker 2 finished job 5
+workerInWGExample 1 started job 1
+workerInWGExample 2 started job 2
+workerInWGExample 3 started job 3
+workerInWGExample 3 finished job 3
+workerInWGExample 3 started job 4
+workerInWGExample 2 finished job 2
+workerInWGExample 2 started job 5
+workerInWGExample 1 finished job 1
+workerInWGExample 3 finished job 4
+workerInWGExample 2 finished job 5
 time cost: 2.0214179s
 */
